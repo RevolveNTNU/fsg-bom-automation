@@ -101,8 +101,10 @@ python bom_automation.py
 The script will:
 1. Let you pick an Excel file
 2. Show you which systems are in the file
-3. Open a browser, log you in, and start uploading
-4. Print a summary of what was uploaded, skipped, or failed
+3. Open a browser and log you in
+4. Print all available assembly options from the FSG dropdown
+5. Start uploading (only rows matching `ALLOWED_ASSEMBLIES`, if configured)
+6. Print a summary of what was uploaded, skipped, or failed
 
 ---
 
@@ -118,6 +120,9 @@ Your Excel file should have these column headers (case-insensitive):
 | `part_quantity` | ❌ | Quantity (number) |
 | `make o. buy` | ❌ | `m` for make, `b` for buy |
 | `part_comments` | ❌ | Comments (free text) |
+
+The FSG form limits `part` to 25 characters and `part_comments` to 40 characters.
+Rows exceeding those limits are skipped and logged as errors.
 
 ---
 
@@ -167,6 +172,16 @@ The FSG website has fixed assembly names. If your Excel uses a slightly differen
 | ... and many more | |
 
 > You can add your own mappings by editing the `ASSEMBLY_REMAP` dictionary in `bom_automation.py`.
+>
+> After login, the script prints all available assembly labels from the FSG site.
+> Use the `ALLOWED_ASSEMBLIES` environment variable in `.env` to restrict uploads
+> to a whitelist of exact assembly names.
+>
+> If `ALLOWED_ASSEMBLIES` is not set, the script will prompt you with a numbered
+> checklist after login. Enter numbers (comma-separated) to select assemblies to
+> upload, or press ENTER to allow all assemblies.
+>
+> Mappings in `ASSEMBLY_REMAP` are still applied automatically before matching.
 
 ---
 
@@ -193,6 +208,7 @@ All settings are controlled via the `.env` file. See [`.env.example`](.env.examp
 | `DRY_RUN` | `false` | When `true`, no uploads are performed; script only logs actions |
 | `TEST_LIMIT` | `3` | Number of parts in test mode |
 | `DEFAULT_SYSTEM` | *(empty)* | Auto-select a system (e.g. `BR`) |
+| `ALLOWED_ASSEMBLIES` | *(empty)* | Optional comma-separated exact assembly labels to upload |
 | `BOMS_DIR` | `BOMs` | Folder containing Excel files |
 | `LOG_FILE` | `bom_log.txt` | Output log filename |
 

@@ -7,6 +7,9 @@
 __pycache__/
 *.pyc
 
+# Development/Testing scripts
+/scripts
+
 # Logs (generated at runtime)
 bom_log.txt
 
@@ -36,7 +39,6 @@ pip-wheel-metadata/
 .vscode/
 .idea/
 
-# Env variants
-.env.local
-.env.dev
-.env.test
+# Data files
+/BOMs/*
+!/BOMs/BOM_Example_EFRxx.xlsx
