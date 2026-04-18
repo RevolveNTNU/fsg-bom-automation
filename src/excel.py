@@ -73,15 +73,21 @@ class ExcelProcessor:
     def get_cell_color(self, sheet, row: int, col: int = 1) -> Optional[str]:
         try:
             fill = sheet.cell(row=row, column=col).fill
-            if not fill or not fill.patternType: return None
+            if not fill or not fill.patternType:
+                return None
             color = fill.start_color or fill.fgColor
-            if not color: return None
+            if not color:
+                return None
             
             raw = None
-            if hasattr(color, "rgb") and color.rgb: raw = color.rgb
-            elif hasattr(color, "index") and color.index: raw = color.index
+            if hasattr(color, "rgb") and color.rgb:
+                raw = color.rgb
+            elif hasattr(color, "index") and color.index:
+                raw = color.index
             return self._normalize_color(raw)
-        except Exception: return None
+        except Exception:
+            # Return None if the color value can't be normalized
+            return None
 
     def should_skip_row_color(self, sheet, row: int) -> Optional[str]:
         for col in range(1, min(sheet.max_column, 5) + 1):
@@ -110,7 +116,8 @@ class ExcelProcessor:
         
         def find_col(aliases):
             for a in aliases:
-                if a in raw_cols: return raw_cols.index(a)
+                if a in raw_cols:
+                    return raw_cols.index(a)
             return None
 
         col_map = {

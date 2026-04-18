@@ -50,23 +50,35 @@ class Config:
             self.dry_run = os.getenv("DRY_RUN", "").lower() == "true"
         
         # 3. Numeric values
-        try: self.test_limit = int(os.getenv("TEST_LIMIT", self.test_limit))
-        except: pass
+        try:
+            self.test_limit = int(os.getenv("TEST_LIMIT", self.test_limit))
+        except Exception:
+            pass
         
-        try: self.base_delay = float(os.getenv("BASE_DELAY", self.base_delay))
-        except: pass
+        try:
+            self.base_delay = float(os.getenv("BASE_DELAY", self.base_delay))
+        except Exception:
+            pass
         
-        try: self.burst_limit = int(os.getenv("BURST_LIMIT", self.burst_limit))
-        except: pass
+        try:
+            self.burst_limit = int(os.getenv("BURST_LIMIT", self.burst_limit))
+        except Exception:
+            pass
         
-        try: self.burst_cooldown = float(os.getenv("BURST_COOLDOWN", self.burst_cooldown))
-        except: pass
+        try:
+            self.burst_cooldown = float(os.getenv("BURST_COOLDOWN", self.burst_cooldown))
+        except Exception:
+            pass
         
-        try: self.max_retries = int(os.getenv("MAX_RETRIES", self.max_retries))
-        except: pass
+        try:
+            self.max_retries = int(os.getenv("MAX_RETRIES", self.max_retries))
+        except Exception:
+            pass
         
-        try: self.request_timeout = float(os.getenv("REQUEST_TIMEOUT", str(self.request_timeout/1000.0))) * 1000
-        except: pass
+        try:
+            self.request_timeout = float(os.getenv("REQUEST_TIMEOUT", str(self.request_timeout/1000.0))) * 1000
+        except Exception:
+            pass
 
         # 4. Strings & Lists
         self.default_system = os.getenv("DEFAULT_SYSTEM", self.default_system).strip().upper()
@@ -92,16 +104,23 @@ class Config:
         
         args = parser.parse_args()
         
-        if args.team_id: self.team_id = args.team_id
-        if args.username: self.username = args.username
-        if args.password: self.password = args.password
+        if args.team_id:
+            self.team_id = args.team_id
+        if args.username:
+            self.username = args.username
+        if args.password:
+            self.password = args.password
         
         # Only override if explicit CLI flag is used (not None)
-        if args.test_mode is not None: self.test_mode = args.test_mode
-        if args.dry_run is not None: self.dry_run = args.dry_run
+        if args.test_mode is not None:
+            self.test_mode = args.test_mode
+        if args.dry_run is not None:
+            self.dry_run = args.dry_run
         
-        if args.limit: self.test_limit = args.limit
-        if args.system: self.default_system = args.system.upper()
+        if args.limit:
+            self.test_limit = args.limit
+        if args.system:
+            self.default_system = args.system.upper()
         
         if args.set_password:
             self._store_password()

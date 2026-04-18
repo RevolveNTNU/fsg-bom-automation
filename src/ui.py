@@ -1,5 +1,4 @@
 import threading
-import questionary
 from datetime import datetime
 from rich.console import Console, Group
 from rich.panel import Panel
@@ -40,8 +39,10 @@ class UI:
         thread = threading.Thread(target=_target, daemon=True)
         thread.start()
         try:
-            while thread.is_alive(): thread.join(timeout=0.1)
-        except KeyboardInterrupt: raise
+            while thread.is_alive():
+                thread.join(timeout=0.1)
+        except KeyboardInterrupt:
+            raise
         return result[0]
 
     def show_summary(self, count: int, filename: str, system: str, test_mode: bool, dry_run: bool):

@@ -1,10 +1,7 @@
 import os
-import sys
 import time
 import random
-import openpyxl
 import questionary
-from typing import List, Dict, Any
 from .config import Config
 from .excel import ExcelProcessor
 from .matcher import AssemblyMatcher
@@ -19,7 +16,8 @@ class BOMAutomation:
         self.matcher = AssemblyMatcher()
 
     def _smart_delay(self, seconds, jitter=0.2):
-        if seconds <= 0: return
+        if seconds <= 0:
+            return
         actual = seconds * (1 + random.uniform(-jitter, jitter))
         time.sleep(max(0.1, actual))
 
@@ -34,7 +32,8 @@ class BOMAutomation:
             return
             
         filepath = self.ui.prompt_ask(questionary.select("Select BOM file:", choices=[os.path.basename(f) for f in files]))
-        if not filepath: return
+        if not filepath:
+            return
         filepath = next(f for f in files if os.path.basename(f) == filepath)
 
         # 2. System Selection
@@ -54,7 +53,8 @@ class BOMAutomation:
             choices.insert(0, questionary.Choice("ALL - Process everything", "ALL"))
             run_system = self.ui.prompt_ask(questionary.select("Select system:", choices=choices))
 
-        if not run_system: return
+        if not run_system:
+            return
 
         # 3. Filter Rows
         parts, stats = self.excel.process_file(filepath, run_system)
@@ -73,7 +73,8 @@ class BOMAutomation:
             return
 
         self.ui.show_summary(len(parts), os.path.basename(filepath), run_system, self.config.test_mode, self.config.dry_run)
-        if not self.ui.prompt_ask(questionary.confirm("Proceed with uploading?")): return
+        if not self.ui.prompt_ask(questionary.confirm("Proceed with uploading?")):
+            return
 
         # 4. Browser Session
         with FSGBrowser(self.config) as browser:
@@ -110,7 +111,7 @@ class BOMAutomation:
                 else:
                     skipped_matching += 1
             
-            self.ui.log(f"Assembly Matching Summary:")
+            self.ui.log("Assembly Matching Summary:")
             self.ui.log(f"  • Parts matching selected assemblies: {len(matched_parts)}")
             self.ui.log(f"  • Parts skipped (no assembly match): {skipped_matching}")
 

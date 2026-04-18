@@ -1,4 +1,3 @@
-import pytest
 from fsg_bom.matcher import AssemblyMatcher
 
 def test_resolve_label_exact():

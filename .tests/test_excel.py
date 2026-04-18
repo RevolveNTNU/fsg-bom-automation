@@ -1,5 +1,4 @@
 import pytest
-import os
 import openpyxl
 from fsg_bom.excel import ExcelProcessor
 

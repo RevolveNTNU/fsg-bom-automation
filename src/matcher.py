@@ -41,25 +41,30 @@ class AssemblyMatcher:
 
         # 1. Exact match
         for opt in options:
-            if opt.strip() == resolved: return opt
+            if opt.strip() == resolved:
+                return opt
 
         # 2. Case-insensitive
         for opt in options:
-            if opt.strip().lower() == target_lower: return opt
+            if opt.strip().lower() == target_lower:
+                return opt
 
         # 3. Substring
         for opt in options:
             ol = opt.strip().lower()
-            if target_lower in ol or ol in target_lower: return opt
+            if target_lower in ol or ol in target_lower:
+                return opt
 
         # 4. Normalized
         for opt in options:
-            if self._normalize(opt) == target_norm: return opt
+            if self._normalize(opt) == target_norm:
+                return opt
 
         # 5. Normalized substring
         for opt in options:
             on = self._normalize(opt)
-            if target_norm in on or on in target_norm: return opt
+            if target_norm in on or on in target_norm:
+                return opt
 
         return None
 

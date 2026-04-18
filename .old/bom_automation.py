@@ -27,6 +27,10 @@ import threading
 from datetime import datetime
 from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
+import questionary
+from rich.table import Table
+from rich.console import Console
+from rich.panel import Panel
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Configuration
@@ -463,8 +467,6 @@ def discover_excel_files() -> list[str]:
     return sorted(files)
 
 
-import questionary
-
 def select_file() -> str:
     """Interactive file picker for Excel BOMs using questionary."""
     files = discover_excel_files()
@@ -490,10 +492,6 @@ def select_file() -> str:
             return f
     return files[0]
 
-
-from rich.table import Table
-from rich.console import Console
-from rich.panel import Panel
 
 def show_summary(filtered_count, filename, system, test_mode, dry_run):
     console = Console()
@@ -920,7 +918,8 @@ def main() -> None:
                     asm_val = str(r.get('assembly') or '').strip()
                     part_val = str(r.get('part') or '').strip()
                     
-                    if not part_val: continue
+                    if not part_val:
+                        continue
                     
                     key = f"{sys_val}_{asm_val}_{part_val}".lower()
                     existing[key] = {
@@ -1145,7 +1144,9 @@ def main() -> None:
                             try:
                                 page.keyboard.press("Escape")
                                 page.wait_for_timeout(500)
-                            except Exception: pass
+                            except Exception:
+                                # Ignore transient Playwright errors when sending Escape
+                                pass
 
                             if attempts > MAX_RETRIES:
                                 # Fail-Safe Prompt

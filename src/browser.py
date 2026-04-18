@@ -1,6 +1,6 @@
 import time
 from typing import List, Dict, Optional
-from playwright.sync_api import sync_playwright, Page
+from playwright.sync_api import sync_playwright
 
 class FSGBrowser:
     def __init__(self, config):
@@ -18,11 +18,14 @@ class FSGBrowser:
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        if self.browser: self.browser.close()
-        if self.pw: self.pw.stop()
+        if self.browser:
+            self.browser.close()
+        if self.pw:
+            self.pw.stop()
 
     def login(self):
-        if not self.config.username or not self.config.password: return False
+        if not self.config.username or not self.config.password:
+            return False
         self.page.goto(self.config.login_url)
         self.page.fill("#tx-felogin-input-username", self.config.username)
         self.page.fill("#tx-felogin-input-password", self.config.password)
@@ -116,11 +119,15 @@ class FSGBrowser:
         self.page.locator("#DTE_Field_assembly").select_option(label=item['assembly'])
         self.page.locator("#DTE_Field_part").fill(item['part'])
         
-        if item['makebuy'] == 'm': self.page.locator("#DTE_Field_makebuy_0").check()
-        else: self.page.locator("#DTE_Field_makebuy_1").check()
+        if item['makebuy'] == 'm':
+            self.page.locator("#DTE_Field_makebuy_0").check()
+        else:
+            self.page.locator("#DTE_Field_makebuy_1").check()
         
-        if item['comments']: self.page.locator("#DTE_Field_comments").fill(item['comments'])
-        if item['quantity']: self.page.locator("#DTE_Field_quantity").fill(item['quantity'])
+        if item['comments']:
+            self.page.locator("#DTE_Field_comments").fill(item['comments'])
+        if item['quantity']:
+            self.page.locator("#DTE_Field_quantity").fill(item['quantity'])
         
         self.page.get_by_text("Create", exact=True).click()
         self.page.wait_for_selector(".DTE_Action_Create", state="hidden", timeout=10000)
