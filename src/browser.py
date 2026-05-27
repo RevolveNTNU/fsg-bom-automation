@@ -113,9 +113,25 @@ class FSGBrowser:
         self.page.get_by_text("New", exact=True).click()
         self.page.wait_for_selector(".DTE_Action_Create")
         
+        # Select system and trigger change event
         self.page.locator("#DTE_Field_system").select_option(label=item['system_label'])
         self.page.locator("#DTE_Field_system").dispatch_event("change")
-        time.sleep(0.3)
+        
+        # Wait for the specific assembly option to be loaded in the dropdown
+        try:
+            target_asm = item['assembly']
+            self.page.wait_for_function(
+                f"""(asm) => {{
+                    const el = document.querySelector("#DTE_Field_assembly");
+                    return el && Array.from(el.options).some(o => o.text === asm);
+                }}""",
+                target_asm,
+                timeout=5000
+            )
+        except Exception:
+            # If it doesn't appear in 5s, let the next step try (and potentially fail with a better error)
+            pass
+            
         self.page.locator("#DTE_Field_assembly").select_option(label=item['assembly'])
         self.page.locator("#DTE_Field_part").fill(item['part'])
         

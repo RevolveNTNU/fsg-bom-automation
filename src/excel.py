@@ -150,6 +150,17 @@ class ExcelProcessor:
                 stats["empty_rows"] += 1
                 continue
 
+            # Check for "BIS HIER NUR BEISPIEL" marker (means everything before was examples)
+            row_content = " ".join(str(val) for val in row.values).upper()
+            if "BIS HIER" in row_content and "BEISPIEL" in row_content:
+                # Add everything processed so far to examples and reset
+                stats["example_rows"] += stats["valid_parts"] + stats["system_mismatch"] + stats["skipped_by_color"] + 1
+                stats["valid_parts"] = 0
+                stats["system_mismatch"] = 0
+                stats["skipped_by_color"] = 0
+                filtered = []
+                continue
+
             if any(x in sys_val for x in ["BEISPIEL", "EXAMPLE"]) or \
                any(x in part_val.upper() for x in ["BEISPIEL", "EXAMPLE"]):
                 stats["example_rows"] += 1
@@ -178,7 +189,7 @@ class ExcelProcessor:
                     choices=[
                         "Edit (with pre-fill)",
                         "Truncate to 40 chars",
-                        "Skip (keep as is)"
+                        "Skip - do NOT upload"
                     ]
                 ).ask()
 
@@ -190,6 +201,10 @@ class ExcelProcessor:
                     ).ask()
                 elif choice == "Truncate to 40 chars":
                     comm_val = comm_val[:40]
+                elif choice == "Skip - do NOT upload":
+                    with open("bom_log.txt", "a") as log:
+                        log.write(f"Row {excel_row}: Action=Skip, Original Comment='{comm_val}'\n")
+                    continue
                 
                 with open("bom_log.txt", "a") as log:
                     log.write(f"Row {excel_row}: Action={choice}, Final Comment='{comm_val}'\n")

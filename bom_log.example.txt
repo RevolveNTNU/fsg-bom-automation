@@ -1,17 +1,38 @@
-2026-05-27 22:33:49 | INFO  | ============================================================
-2026-05-27 22:33:49 | INFO  | FSG CCBOM Automation — Starting
-Row 10: Action=None, Final Comment='generative optimized frame to connect mono and FW'
-Row 11: Action=None, Final Comment='generative optimized frame to connect mono and FW'
-Row 23: Action=None, Final Comment='thread in the flaps to mount FW Connection (M4)'
-Row 24: Action=None, Final Comment='selfmade smaller version of the bigHead (M3)'
-2026-05-27 22:34:05 | INFO  | ============================================================
-2026-05-27 22:34:05 | INFO  | FSG CCBOM Automation — Starting
-Row 16: Action=Skip (keep as is), Final Comment='Headrest upper STEELplate (Anschraubpunkt)'
-Row 36: Action=Skip (keep as is), Final Comment='At the front above axle, covers suspension'
-2026-05-27 22:34:14 | INFO  | Excel Scan Summary for 'BOM_Chassis&MS_EFR18 (1).xlsx':
-2026-05-27 22:34:14 | INFO  |   • Total rows found:     82
-2026-05-27 22:34:14 | INFO  |   • Empty/Invalid rows:   1
-2026-05-27 22:34:14 | INFO  |   • Example rows skipped: 1
-2026-05-27 22:34:14 | INFO  |   • System mismatch:      24 (filtered by FR)
-2026-05-27 22:34:14 | INFO  |   • Already done (color): 0
-2026-05-27 22:34:14 | INFO  |   • Valid parts found:    56
+2026-05-27 23:31:24 | INFO  | ============================================================
+2026-05-27 23:31:24 | INFO  | FSG CCBOM Automation — Starting
+Row 16: Action=Edit (with pre-fill), Final Comment='Headrest upper STEELplate Anschraubpunkt'
+Row 36: Action=Edit (with pre-fill), Final Comment='At front above axle - covers suspension'
+2026-05-27 23:32:23 | INFO  | Excel Scan Summary for 'BOM_Chassis&MS_EFR18 (1).xlsx':
+2026-05-27 23:32:23 | INFO  |   • Total rows found:     82
+2026-05-27 23:32:23 | INFO  |   • Empty/Invalid rows:   1
+2026-05-27 23:32:23 | INFO  |   • Example rows skipped: 7
+2026-05-27 23:32:23 | INFO  |   • System mismatch:      24 (filtered by FR)
+2026-05-27 23:32:23 | INFO  |   • Already done (color): 0
+2026-05-27 23:32:23 | INFO  |   • Valid parts found:    50
+2026-05-27 23:32:39 | INFO  | Assembly Matching Summary:
+2026-05-27 23:32:39 | INFO  |   • Parts matching selected assemblies: 49
+2026-05-27 23:32:39 | INFO  |   • Parts skipped (no assembly match): 1
+2026-05-27 23:32:39 | INFO  | Test Mode active: will attempt to upload 3 parts.
+2026-05-27 23:32:39 | INFO  | Fetching existing parts from FSG for deduplication...
+2026-05-27 23:32:41 | INFO  | Found 839 existing parts on the website.
+2026-05-27 23:32:44 |  OK   | Row 9: Created 'FH Sheet'
+2026-05-27 23:32:47 |  OK   | Row 10: Created 'FH Profile'
+2026-05-27 23:33:18 | ERROR | Row 11: Error creating 'Mainhoop Tube': Locator.select_option: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#DTE_Field_assembly")
+    - locator resolved to <select id="DTE_Field_assembly">…</select>
+  - attempting select option action
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+    - waiting 20ms
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+      - waiting 100ms
+    59 × waiting for element to be visible and enabled
+       - did not find some options
+     - retrying select option action
+       - waiting 500ms
+
+2026-05-27 23:33:20 | INFO  | Automation finished.
