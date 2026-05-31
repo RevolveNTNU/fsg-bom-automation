@@ -41,6 +41,9 @@ class BOMAutomation:
             if not filepath:
                 self.ui.log(f"Target file '{self.config.target_file}' not found.", "ERROR")
                 return
+        elif self.config.auto_confirm:
+            filepath = files[0]
+            self.ui.log(f"Auto-confirm enabled: Selecting first file: {os.path.basename(filepath)}")
         else:
             selection = self.ui.prompt_ask(questionary.select("Select BOM file:", choices=[os.path.basename(f) for f in files]))
             if not selection:
@@ -53,6 +56,9 @@ class BOMAutomation:
         
         run_system = self.config.default_system
         if not run_system or run_system not in all_systems:
+            if self.config.auto_confirm:
+                self.ui.log(f"Auto-confirm enabled: No system selected, and default '{run_system}' is invalid.", "ERROR")
+                return
             choices = [questionary.Choice(self.matcher.get_system_label(s), s) for s in all_systems]
             run_system = self.ui.prompt_ask(questionary.select("Select system to process:", choices=choices))
 
@@ -182,10 +188,12 @@ class BOMAutomation:
                         try:
                             browser.create_part(part)
                             status_table.add_row(str(part['row']), part['part'], "[green]OK[/]", "Created")
+                            self.excel.mark_row_status(filepath, part['row'], "OK")
                             self.ui.log(f"Row {part['row']}: Created '{part['part']}'", "OK")
                             existing[self.matcher.canonical_key(part['system'], part['assembly'], part['part'])] = part
                         except Exception as e:
                             status_table.add_row(str(part['row']), part['part'], "[red]ERR[/]", str(e))
+                            self.excel.mark_row_status(filepath, part['row'], "ERR")
                             self.ui.log(f"Row {part['row']}: Error creating '{part['part']}': {e}", "ERROR")
 
                     self.ui.update_eta(progress, task_id, start_time, i + 1, len(matched_parts))

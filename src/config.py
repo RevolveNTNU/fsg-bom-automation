@@ -51,6 +51,8 @@ class Config:
             self.test_mode = os.getenv("TEST_MODE", "").lower() == "true"
         if os.getenv("DRY_RUN") is not None:
             self.dry_run = os.getenv("DRY_RUN", "").lower() == "true"
+        if os.getenv("AUTO_CONFIRM") is not None:
+            self.auto_confirm = os.getenv("AUTO_CONFIRM", "").lower() == "true"
         
         # 3. Numeric values
         try:

@@ -103,6 +103,29 @@ class ExcelProcessor:
                 return skip
         return None
 
+    def _get_wb_for_writing(self, filepath: str):
+        # Always reload without data_only=True to preserve formulas
+        return openpyxl.load_workbook(filepath)
+
+    def update_cell(self, filepath: str, row: int, col_name: str, value: Any):
+        wb = self._get_wb_for_writing(filepath)
+        sheet = wb.active
+        # Find column index from headers
+        headers = [sheet.cell(1, c).value for c in range(1, sheet.max_column + 1)]
+        col_idx = headers.index(col_name) + 1
+        sheet.cell(row=row, column=col_idx, value=value)
+        wb.save(filepath)
+        wb.close()
+
+    def mark_row_status(self, filepath: str, row: int, status: str):
+        wb = self._get_wb_for_writing(filepath)
+        sheet = wb.active
+        fill = openpyxl.styles.PatternFill(start_color="00FF00" if status == "OK" else "FF0000", end_color="00FF00" if status == "OK" else "FF0000", fill_type="solid")
+        for col in range(1, min(sheet.max_column, 5) + 1):
+            sheet.cell(row=row, column=col).fill = fill
+        wb.save(filepath)
+        wb.close()
+
     def process_file(self, filepath: str, run_system: str = "ALL", matcher: Any = None, auto_confirm: bool = False) -> tuple[list[dict[str, Any]], dict[str, int]]:
         target_systems = [run_system.upper()] if run_system and run_system != "ALL" else []
             
@@ -161,6 +184,11 @@ class ExcelProcessor:
         if col_map["system"] is None or col_map["part"] is None:
             raise ValueError(f"Could not identify required 'system' or 'part' columns in {filepath}")
 
+        # DEBUG
+        if self.ui:
+            self.ui.log(f"DEBUG: raw_cols: {raw_cols}")
+            self.ui.log(f"DEBUG: col_map: {col_map}")
+
         filtered = []
         for idx, row in df.iterrows():
             excel_row = idx + 2
@@ -207,14 +235,14 @@ class ExcelProcessor:
 
             # --- Validation: Part Name (Max 25) ---
             if len(part_val) > 25:
-                res = self._handle_long_field(part_val, 25, "Part Name", excel_row, auto_confirm)
+                res = self._handle_long_field(filepath, part_val, 25, "Part Name", excel_row, auto_confirm)
                 if res is None: # Skip
                     continue
                 part_val = res
 
             # --- Validation: Comment (Max 40) ---
             if len(comm_val) > 40:
-                res = self._handle_long_field(comm_val, 40, "Comment", excel_row, auto_confirm)
+                res = self._handle_long_field(filepath, comm_val, 40, "Comment", excel_row, auto_confirm)
                 if res is None: # Skip
                     continue
                 comm_val = res
@@ -232,7 +260,7 @@ class ExcelProcessor:
 
         return filtered, stats
 
-    def _handle_long_field(self, value: str, limit: int, field_name: str, row: int, auto_confirm: bool) -> str | None:
+    def _handle_long_field(self, filepath: str, value: str, limit: int, field_name: str, row: int, auto_confirm: bool) -> str | None:
         """Helper to handle long text fields interactively or automatically."""
         if auto_confirm:
             if self.ui:
@@ -258,6 +286,8 @@ class ExcelProcessor:
                 ]
             ).ask()
 
+            col_name = "part" if field_name == "Part Name" else "part_comments"
+
             if choice == "Edit (with pre-fill)":
                 def validate_len(text):
                     if len(text) <= limit:
@@ -280,12 +310,14 @@ class ExcelProcessor:
                     continue
                 
                 value = edited
+                self.update_cell(filepath, row, col_name, value)
                 with open("bom_log.txt", "a") as log:
                     log.write(f"Row {row}: Action=Edit ({field_name}), Final='{value}'\n")
                 return value
 
             elif choice == f"Truncate to {limit} chars":
                 value = value[:limit]
+                self.update_cell(filepath, row, col_name, value)
                 with open("bom_log.txt", "a") as log:
                     log.write(f"Row {row}: Action=Truncate ({field_name}), Final='{value}'\n")
                 return value

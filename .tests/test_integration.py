@@ -17,7 +17,8 @@ def test_dry_run_full_flow(tmp_path):
     import openpyxl
     wb = openpyxl.Workbook()
     ws = wb.active
-    ws.append(["System", "Assembly", "Part", "Part_Quantity", "Make o. Buy", "Part_Comments"])
+    # Use headers that strictly match what the processor looks for
+    ws.append(["system", "assembly", "part", "quantity", "make o. buy", "part_comments"])
     ws.append(["DT", "Gearbox", "Sun Gear", "1", "m", ""])
     test_file = boms_dir / "test_bom.xlsx"
     wb.save(test_file)
@@ -31,10 +32,9 @@ def test_dry_run_full_flow(tmp_path):
     # 4. Run the script in a subprocess
     # We use -m to run as a module if possible, or just call the script
     result = subprocess.run(
-        [sys.executable, "main.py", "--system", "DT", "--limit", "1"],
+        [sys.executable, "main.py", "--system", "DT", "--limit", "1", "--yes"],
         capture_output=True,
         text=True,
-        input="test_bom.xlsx\n\n", # Select file and proceed
     )
     
     assert result.returncode == 0

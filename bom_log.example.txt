@@ -1,21 +1,477 @@
+2026-05-28 00:31:04 | INFO  | ============================================================
+2026-05-28 00:31:04 | INFO  | FSG CCBOM Automation — Starting
+2026-05-28 00:31:04 | WARN  | File 'BOM_Chassis&MS_EFR18 (1).xlsx' is locked. Attempting to read from a temporary copy...
+2026-05-28 19:23:29 | INFO  | ============================================================
+2026-05-28 19:23:29 | INFO  | FSG CCBOM Automation — Starting
+Row 16: Action=Edit (Comment), Final='Headrest upper STEELplate Anschraubpunkt'
+Row 36: Action=Edit (Comment), Final='At front above axle, covers suspension'
+Row 38: Action=Edit (Part Name), Final='Suspension Inserts Liste'
+Row 48: Action=Edit (Part Name), Final='Elektromotoren Sticker'
+Row 52: Action=Edit (Part Name), Final='ZMP IAVT Sticker'
+Row 54: Action=Edit (Part Name), Final='Drechsler& Liebig Sticker'
+Row 57: Action=Edit (Part Name), Final='M�ller Pr�zisions Sticker'
+2026-05-28 19:25:21 | INFO  | Excel Scan Summary for 'BOM_Chassis&MS_EFR18 (1).xlsx':
+2026-05-28 19:25:21 | INFO  |   • Total rows found:     82
+2026-05-28 19:25:21 | INFO  |   • Empty/Invalid rows:   1
+2026-05-28 19:25:21 | INFO  |   • Example rows skipped: 7
+2026-05-28 19:25:21 | INFO  |   • System mismatch:      24 (filtered by FR)
+2026-05-28 19:25:21 | INFO  |   • Already done (color): 0
+2026-05-28 19:25:21 | INFO  |   • Valid parts found:    50
+2026-05-28 19:25:40 | INFO  | Assembly Matching Summary:
+2026-05-28 19:25:40 | INFO  |   • Parts matching selected assemblies: 49
+2026-05-28 19:25:40 | INFO  |   • Parts skipped (no assembly match): 1
+2026-05-28 19:25:40 | INFO  | Will attempt to upload all 49 matched parts.
+2026-05-28 19:25:40 | INFO  | Fetching existing parts from FSG for deduplication...
+2026-05-28 19:25:40 | INFO  | Found 844 existing parts on the website.
+2026-05-28 19:25:40 | SKIP  | Row 9: Found duplicate match: Excel='FH Sheet' vs Site='FH Sheet'
+2026-05-28 19:25:40 | SKIP  | Row 9: Skipped duplicate 'FH Sheet'
+2026-05-28 19:25:41 | SKIP  | Row 10: Found duplicate match: Excel='FH Profile' vs Site='FH Profile'
+2026-05-28 19:25:41 | SKIP  | Row 10: Skipped duplicate 'FH Profile'
+2026-05-28 19:25:42 | SKIP  | Row 11: Found duplicate match: Excel='Mainhoop Tube' vs Site='Mainhoop Tube'
+2026-05-28 19:25:42 | SKIP  | Row 11: Skipped duplicate 'Mainhoop Tube'
+2026-05-28 19:25:43 | SKIP  | Row 12: Found duplicate match: Excel='Bracing' vs Site='Bracing'
+2026-05-28 19:25:43 | SKIP  | Row 12: Skipped duplicate 'Bracing'
+2026-05-28 19:25:44 | SKIP  | Row 13: Found duplicate match: Excel='Upper Attachment' vs Site='Upper Attachment'
+2026-05-28 19:25:44 | SKIP  | Row 13: Skipped duplicate 'Upper Attachment'
+2026-05-28 19:25:45 | SKIP  | Row 14: Found duplicate match: Excel='Lower Attachment' vs Site='Lower Attachment'
+2026-05-28 19:25:45 | SKIP  | Row 14: Skipped duplicate 'Lower Attachment'
+2026-05-28 19:25:46 | SKIP  | Row 15: Found duplicate match: Excel='Bracing Attachment' vs Site='Bracing Attachment'
+2026-05-28 19:25:46 | SKIP  | Row 15: Skipped duplicate 'Bracing Attachment'
+2026-05-28 19:25:47 | SKIP  | Row 16: Found duplicate match: Excel='HR Upper Attachment' vs Site='HR Upper Attachment'
+2026-05-28 19:25:47 | SKIP  | Row 16: Skipped duplicate 'HR Upper Attachment'
+2026-05-28 19:25:48 | SKIP  | Row 17: Found duplicate match: Excel='HR Lower Attachment' vs Site='HR Lower Attachment'
+2026-05-28 19:25:48 | SKIP  | Row 17: Skipped duplicate 'HR Lower Attachment'
+2026-05-28 19:25:49 | SKIP  | Row 18: Found duplicate match: Excel='Rearwing Attachment' vs Site='Rearwing Attachment'
+2026-05-28 19:25:49 | SKIP  | Row 18: Skipped duplicate 'Rearwing Attachment'
+2026-05-28 19:25:50 | SKIP  | Row 19: Found duplicate match: Excel='Camera Plate' vs Site='Camera Plate'
+2026-05-28 19:25:50 | SKIP  | Row 19: Skipped duplicate 'Camera Plate'
+2026-05-28 19:25:51 | SKIP  | Row 20: Found duplicate match: Excel='Rollbar Padding' vs Site='Rollbar Padding'
+2026-05-28 19:25:51 | SKIP  | Row 20: Skipped duplicate 'Rollbar Padding'
+2026-05-28 19:25:52 | SKIP  | Row 21: Found duplicate match: Excel='Crashbox' vs Site='Crashbox'
+2026-05-28 19:25:52 | SKIP  | Row 21: Skipped duplicate 'Crashbox'
+2026-05-28 19:25:53 | SKIP  | Row 22: Found duplicate match: Excel='Tape' vs Site='Tape'
+2026-05-28 19:25:53 | SKIP  | Row 22: Skipped duplicate 'Tape'
+2026-05-28 19:25:54 | SKIP  | Row 23: Found duplicate match: Excel='Washer ED' vs Site='Washer ED'
+2026-05-28 19:25:54 | SKIP  | Row 23: Skipped duplicate 'Washer ED'
+2026-05-28 19:25:55 | SKIP  | Row 24: Found duplicate match: Excel='Washer ED' vs Site='Washer ED'
+2026-05-28 19:25:55 | SKIP  | Row 24: Skipped duplicate 'Washer ED'
+2026-05-28 19:25:56 | SKIP  | Row 25: Found duplicate match: Excel='Washer ED' vs Site='Washer ED'
+2026-05-28 19:25:56 | SKIP  | Row 25: Skipped duplicate 'Washer ED'
+2026-05-28 19:25:57 | SKIP  | Row 26: Found duplicate match: Excel='Washer ED' vs Site='Washer ED'
+2026-05-28 19:25:57 | SKIP  | Row 26: Skipped duplicate 'Washer ED'
+2026-05-28 19:25:58 | SKIP  | Row 27: Found duplicate match: Excel='Anti Intrusion Plate' vs Site='Anti Intrusion Plate'
+2026-05-28 19:25:58 | SKIP  | Row 27: Skipped duplicate 'Anti Intrusion Plate'
+2026-05-28 19:26:20 | ERROR | Row 29: Error creating 'Monocoque': Page.wait_for_selector: Timeout 20000ms exceeded.
 Call log:
   - waiting for locator(".DTE_Action_Create") to be hidden
     2 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
     41 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
 
-2026-05-28 00:19:09 | ERROR | Row 30: Error creating 'Dashboard': Page.wait_for_selector: Timeout 20000ms exceeded.
+2026-05-28 19:26:23 |  OK   | Row 30: Created 'Dashboard'
+2026-05-28 19:26:24 | SKIP  | Row 31: Found duplicate match: Excel='Rearlid' vs Site='Rearlid'
+2026-05-28 19:26:24 | SKIP  | Row 31: Skipped duplicate 'Rearlid'
+2026-05-28 19:26:25 | SKIP  | Row 32: Found duplicate match: Excel='Rearlid Insert Straight' vs Site='Rearlid Insert Straight'
+2026-05-28 19:26:25 | SKIP  | Row 32: Skipped duplicate 'Rearlid Insert Straight'
+2026-05-28 19:26:28 |  OK   | Row 33: Created 'Rearlid Insert Corner'
+2026-05-28 19:26:31 |  OK   | Row 34: Created 'Nose'
+2026-05-28 19:26:34 |  OK   | Row 35: Created 'BMW Sticker'
+2026-05-28 19:26:36 | SKIP  | Row 36: Found duplicate match: Excel='Suspension Cover Front' vs Site='Suspension Cover Front'
+2026-05-28 19:26:36 | SKIP  | Row 36: Skipped duplicate 'Suspension Cover Front'
+2026-05-28 19:26:57 | ERROR | Row 37: Error creating 'Suspension Cover Rear': Page.wait_for_selector: Timeout 20000ms exceeded.
 Call log:
   - waiting for locator(".DTE_Action_Create") to be hidden
     2 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
     41 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
 
-2026-05-28 00:19:16 |  OK   | Row 31: Created 'Rearlid'
-2026-05-28 00:19:23 |  OK   | Row 32: Created 'Rearlid Insert Straight'
-2026-05-28 00:19:26 |  OK   | Row 33: Created 'Rearlid Insert Corner'
-2026-05-28 00:19:31 |  OK   | Row 34: Created 'Nose'
-2026-05-28 00:19:37 |  OK   | Row 35: Created 'BMW Sticker'
-2026-05-28 00:19:45 |  OK   | Row 36: Created 'Suspension Cover Front'
-2026-05-28 00:20:07 | ERROR | Row 37: Error creating 'Suspension Cover Rear': Page.wait_for_selector: Timeout 20000ms exceeded.
+2026-05-28 19:27:00 |  OK   | Row 38: Created 'Suspension Inserts Liste'
+2026-05-28 19:27:01 | SKIP  | Row 39: Found duplicate match: Excel='Soft Trim Sticker' vs Site='Soft Trim Sticker'
+2026-05-28 19:27:01 | SKIP  | Row 39: Skipped duplicate 'Soft Trim Sticker'
+2026-05-28 19:27:02 | SKIP  | Row 40: Found duplicate match: Excel='Sth-Systems Sticker' vs Site='Sth-Systems Sticker'
+2026-05-28 19:27:02 | SKIP  | Row 40: Skipped duplicate 'Sth-Systems Sticker'
+2026-05-28 19:27:03 | SKIP  | Row 41: Found duplicate match: Excel='FSD Sticker' vs Site='FSD Sticker'
+2026-05-28 19:27:03 | SKIP  | Row 41: Skipped duplicate 'FSD Sticker'
+2026-05-28 19:27:04 | SKIP  | Row 42: Found duplicate match: Excel='Kistler Sticker' vs Site='Kistler Sticker'
+2026-05-28 19:27:04 | SKIP  | Row 42: Skipped duplicate 'Kistler Sticker'
+2026-05-28 19:27:05 | SKIP  | Row 43: Found duplicate match: Excel='Picotech Sticker' vs Site='Picotech Sticker'
+2026-05-28 19:27:05 | SKIP  | Row 43: Skipped duplicate 'Picotech Sticker'
+2026-05-28 19:27:06 | SKIP  | Row 44: Found duplicate match: Excel='Zeiss Sticker' vs Site='Zeiss Sticker'
+2026-05-28 19:27:06 | SKIP  | Row 44: Skipped duplicate 'Zeiss Sticker'
+2026-05-28 19:27:07 | SKIP  | Row 45: Found duplicate match: Excel='VMK Sticker' vs Site='VMK Sticker'
+2026-05-28 19:27:07 | SKIP  | Row 45: Skipped duplicate 'VMK Sticker'
+2026-05-28 19:27:08 | SKIP  | Row 46: Found duplicate match: Excel='Emerson/ NI Sticker' vs Site='Emerson/ NI Sticker'
+2026-05-28 19:27:08 | SKIP  | Row 46: Skipped duplicate 'Emerson/ NI Sticker'
+2026-05-28 19:27:09 | SKIP  | Row 47: Found duplicate match: Excel='HILTI Sticker' vs Site='HILTI Sticker'
+2026-05-28 19:27:09 | SKIP  | Row 47: Skipped duplicate 'HILTI Sticker'
+2026-05-28 19:27:12 |  OK   | Row 48: Created 'Elektromotoren Sticker'
+2026-05-28 19:27:14 | SKIP  | Row 49: Found duplicate match: Excel='Modellbau Haase Sticker' vs Site='Modellbau Haase Sticker'
+2026-05-28 19:27:14 | SKIP  | Row 49: Skipped duplicate 'Modellbau Haase Sticker'
+2026-05-28 19:27:15 | SKIP  | Row 50: Found duplicate match: Excel='TKG Sticker' vs Site='TKG Sticker'
+2026-05-28 19:27:15 | SKIP  | Row 50: Skipped duplicate 'TKG Sticker'
+2026-05-28 19:27:16 | SKIP  | Row 51: Found duplicate match: Excel='Vector Sticker' vs Site='Vector Sticker'
+2026-05-28 19:27:16 | SKIP  | Row 51: Skipped duplicate 'Vector Sticker'
+2026-05-28 19:27:19 |  OK   | Row 52: Created 'ZMP IAVT Sticker'
+2026-05-28 19:27:20 | SKIP  | Row 53: Found duplicate match: Excel='E59 Sticker' vs Site='E59 Sticker'
+2026-05-28 19:27:20 | SKIP  | Row 53: Skipped duplicate 'E59 Sticker'
+2026-05-28 19:27:23 |  OK   | Row 54: Created 'Drechsler& Liebig Sticker'
+2026-05-28 19:27:24 | SKIP  | Row 55: Found duplicate match: Excel='LKT Sticker' vs Site='LKT Sticker'
+2026-05-28 19:27:24 | SKIP  | Row 55: Skipped duplicate 'LKT Sticker'
+2026-05-28 19:27:25 | SKIP  | Row 56: Found duplicate match: Excel='Siemens Sticker' vs Site='Siemens Sticker'
+2026-05-28 19:27:25 | SKIP  | Row 56: Skipped duplicate 'Siemens Sticker'
+2026-05-28 19:27:47 | ERROR | Row 57: Error creating 'Müller Präzisions Sticker': Page.wait_for_selector: Timeout 20000ms exceeded.
 Call log:
   - waiting for locator(".DTE_Action_Create") to be hidden
-    43 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
+    2 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
+    41 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
+
+2026-05-28 19:27:48 | SKIP  | Row 58: Found duplicate match: Excel='Modellbau Claß Sticker' vs Site='Modellbau Claß Sticker'
+2026-05-28 19:27:48 | SKIP  | Row 58: Skipped duplicate 'Modellbau Claß Sticker'
+2026-05-28 19:27:49 | INFO  | Automation finished.
+
+
+---
+
+2026-05-28 19:38:44 | INFO  | Excel Scan Summary for 'BOM_Aero_EFR18.xlsx':
+2026-05-28 19:38:44 | INFO  |   • Total rows found:     169
+2026-05-28 19:38:44 | INFO  |   • Empty/Invalid rows:   0
+2026-05-28 19:38:44 | INFO  |   • Example rows skipped: 8
+2026-05-28 19:38:44 | INFO  |   • System mismatch:      0 (filtered by FR)
+2026-05-28 19:38:44 | INFO  |   • Already done (color): 0
+2026-05-28 19:38:44 | INFO  |   • Valid parts found:    161
+2026-05-28 19:38:56 | INFO  | Assembly Matching Summary:
+2026-05-28 19:38:56 | INFO  |   • Parts matching selected assemblies: 160
+2026-05-28 19:38:56 | INFO  |   • Parts skipped (no assembly match): 1
+2026-05-28 19:38:56 | INFO  | Will attempt to upload all 160 matched parts.
+2026-05-28 19:38:56 | INFO  | Fetching existing parts from FSG for deduplication...
+2026-05-28 19:38:56 | INFO  | Found 850 existing parts on the website.
+2026-05-28 19:38:59 |  OK   | Row 10: Created 'connection frame left'
+2026-05-28 19:39:03 |  OK   | Row 11: Created 'connection frame right'
+2026-05-28 19:39:05 |  OK   | Row 12: Created '3D print spacer inner upp'
+2026-05-28 19:39:08 |  OK   | Row 13: Created 'Threaded Insert'
+2026-05-28 19:39:11 |  OK   | Row 14: Created '3D print spacer inner low'
+2026-05-28 19:39:12 | SKIP  | Row 15: Found duplicate match: Excel='Threaded Insert' vs Site='Threaded Insert'
+2026-05-28 19:39:12 | SKIP  | Row 15: Skipped duplicate 'Threaded Insert'
+2026-05-28 19:39:15 |  OK   | Row 16: Created '3D print spacer outer upp'
+2026-05-28 19:39:17 |  OK   | Row 17: Created '3D print spacer outer low'
+2026-05-28 19:39:20 |  OK   | Row 18: Created 'FW connection screw up'
+2026-05-28 19:39:22 |  OK   | Row 19: Created 'FW connection screw lower'
+2026-05-28 19:39:25 |  OK   | Row 20: Created 'FlowBridge 1'
+2026-05-28 19:39:28 |  OK   | Row 21: Created 'FlowBridge 2'
+2026-05-28 19:39:31 |  OK   | Row 22: Created 'FlowBridge 3'
+2026-05-28 19:39:33 |  OK   | Row 23: Created 'BigHead Nut M4'
+2026-05-28 19:39:36 |  OK   | Row 24: Created 'ELBFLORACE bigHead Nut M3'
+2026-05-28 19:39:38 |  OK   | Row 25: Created 'First element (flap)'
+2026-05-28 19:40:00 | ERROR | Row 26: Error creating 'Beam Profile 1E L': Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator(".DTE_Action_Create") to be hidden
+    3 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
+    38 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
+    2 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
+
+2026-05-28 19:40:02 |  OK   | Row 27: Created 'Beam Profile 1E R'
+2026-05-28 19:40:05 |  OK   | Row 28: Created 'Second element (flap)'
+2026-05-28 19:40:26 | ERROR | Row 29: Error creating 'Beam Profile 2E L': Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator(".DTE_Action_Create") to be hidden
+    2 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
+    42 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
+
+2026-05-28 19:40:30 |  OK   | Row 30: Created 'Beam Profile 2E R'
+2026-05-28 19:40:33 |  OK   | Row 31: Created 'Third element (flap)'
+2026-05-28 19:40:42 |  OK   | Row 32: Created 'Beam Profile 3E L'
+2026-05-28 19:40:44 |  OK   | Row 33: Created 'Beam Profile 3E R'
+2026-05-28 19:40:47 |  OK   | Row 34: Created 'Fourth element (flap) R'
+2026-05-28 19:40:59 |  OK   | Row 35: Created 'Beam Profile 4E L'
+2026-05-28 19:41:01 |  OK   | Row 36: Created 'Beam Profile 4E R'
+2026-05-28 19:41:04 |  OK   | Row 37: Created 'Fourth element (flap) L'
+2026-05-28 19:41:07 |  OK   | Row 38: Created 'Endplate L'
+2026-05-28 19:41:10 |  OK   | Row 39: Created 'Endplate R'
+2026-05-28 19:41:13 |  OK   | Row 40: Created 'Flag 1 L'
+2026-05-28 19:41:15 |  OK   | Row 41: Created 'Flag 1 R'
+2026-05-28 19:41:18 |  OK   | Row 42: Created 'Flag 2 L'
+2026-05-28 19:41:21 |  OK   | Row 43: Created 'Flag 2 R'
+2026-05-28 19:41:24 |  OK   | Row 44: Created 'Flag 3 L'
+2026-05-28 19:41:26 |  OK   | Row 45: Created 'Flag 3 R'
+2026-05-28 19:41:30 |  OK   | Row 46: Created 'Cascades BenZig 100 L'
+2026-05-28 19:41:33 |  OK   | Row 47: Created 'Cascades BenZig 100 R'
+2026-05-28 19:41:36 |  OK   | Row 48: Created 'Cascades BenZig 50 L'
+2026-05-28 19:41:40 |  OK   | Row 49: Created 'Cascades BenZig 50 R'
+2026-05-28 19:41:43 |  OK   | Row 50: Created 'Beam Profile FW 1 L'
+2026-05-28 19:41:46 |  OK   | Row 51: Created 'Beam Profile FW 1 R'
+2026-05-28 19:41:49 |  OK   | Row 52: Created 'Beam Profile FW 2 L'
+2026-05-28 19:41:52 |  OK   | Row 53: Created 'Beam Profile FW 2 R'
+2026-05-28 19:41:56 |  OK   | Row 54: Created 'Beam Profile FW 3 L'
+2026-05-28 19:41:59 |  OK   | Row 55: Created 'Beam Profile FW 3 R'
+2026-05-28 19:42:02 |  OK   | Row 56: Created 'Beam Profile FW 4 L'
+2026-05-28 19:42:05 |  OK   | Row 57: Created 'Beam Profile FW 4 R'
+2026-05-28 19:42:08 |  OK   | Row 58: Created 'Kaffanero Sticker'
+2026-05-28 19:42:10 |  OK   | Row 59: Created 'FMR Windkanal Sticker'
+2026-05-28 19:42:42 | ERROR | Row 60: Error creating 'ILK Sticker': Locator.select_option: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#DTE_Field_assembly")
+    - locator resolved to <select id="DTE_Field_assembly">…</select>
+  - attempting select option action
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+    - waiting 20ms
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+      - waiting 100ms
+    59 × waiting for element to be visible and enabled
+       - did not find some options
+     - retrying select option action
+       - waiting 500ms
+
+2026-05-28 19:42:45 |  OK   | Row 61: Created 'MEA Sticker'
+2026-05-28 19:42:49 |  OK   | Row 62: Created 'Teledyne Le Croy Sticker'
+2026-05-28 19:42:52 |  OK   | Row 64: Created 'Mainplate L'
+2026-05-28 19:42:55 |  OK   | Row 65: Created 'Beam Profile Mainplate L'
+2026-05-28 19:42:57 |  OK   | Row 66: Created 'Mainplate R'
+2026-05-28 19:43:00 |  OK   | Row 67: Created 'Beam Profile Mainplate R'
+2026-05-28 19:43:03 |  OK   | Row 68: Created 'Bibwing'
+2026-05-28 19:43:06 |  OK   | Row 69: Created 'Leading edge'
+2026-05-28 19:43:09 |  OK   | Row 70: Created 'Inner strake L'
+2026-05-28 19:43:12 |  OK   | Row 71: Created 'Inner strake R'
+2026-05-28 19:43:14 |  OK   | Row 72: Created 'Outer strake L'
+2026-05-28 19:43:17 |  OK   | Row 73: Created 'Outer strake R'
+2026-05-28 19:43:20 |  OK   | Row 74: Created 'Inner endplate'
+2026-05-28 19:43:22 |  OK   | Row 75: Created 'Outer endplate'
+2026-05-28 19:43:25 |  OK   | Row 76: Created 'Inner upper flap'
+2026-05-28 19:43:27 |  OK   | Row 77: Created 'Inner lower flap'
+2026-05-28 19:43:30 |  OK   | Row 78: Created 'Outer upper flap'
+2026-05-28 19:43:33 |  OK   | Row 79: Created 'Outer lower flap'
+2026-05-28 19:43:35 |  OK   | Row 80: Created 'Mainplate Cover L'
+2026-05-28 19:43:38 |  OK   | Row 81: Created 'Mainplate Cover R'
+2026-05-28 19:43:41 |  OK   | Row 82: Created 'Steering Cover L'
+2026-05-28 19:43:44 |  OK   | Row 83: Created 'Steering Cover R'
+2026-05-28 19:43:46 |  OK   | Row 84: Created 'Span 1 L'
+2026-05-28 19:43:49 |  OK   | Row 85: Created 'Span 1 R'
+2026-05-28 19:43:52 |  OK   | Row 86: Created 'Span 2 L'
+2026-05-28 19:43:54 |  OK   | Row 87: Created 'Span 2 R'
+2026-05-28 19:43:57 |  OK   | Row 88: Created 'Span 3 L'
+2026-05-28 19:44:00 |  OK   | Row 89: Created 'Span 3 R'
+2026-05-28 19:44:03 |  OK   | Row 90: Created 'Span 4 L'
+2026-05-28 19:44:05 |  OK   | Row 91: Created 'Span 4 R'
+2026-05-28 19:44:08 |  OK   | Row 92: Created 'Ramp L'
+2026-05-28 19:44:11 |  OK   | Row 93: Created 'Ramp R'
+2026-05-28 19:44:12 | SKIP  | Row 94: Found duplicate match: Excel='Ramp L' vs Site='Ramp L'
+2026-05-28 19:44:12 | SKIP  | Row 94: Skipped duplicate 'Ramp L'
+2026-05-28 19:44:13 | SKIP  | Row 95: Found duplicate match: Excel='Ramp R' vs Site='Ramp R'
+2026-05-28 19:44:13 | SKIP  | Row 95: Skipped duplicate 'Ramp R'
+2026-05-28 19:44:16 |  OK   | Row 96: Created 'ITM Sticker'
+2026-05-28 19:44:19 |  OK   | Row 97: Created 'Hufschmied Sticker'
+2026-05-28 19:44:21 |  OK   | Row 98: Created 'Analog Devices Sticker'
+2026-05-28 19:44:24 |  OK   | Row 99: Created 'Schneider Logistik Stick'
+2026-05-28 19:44:27 |  OK   | Row 100: Created 'KSG Sticker'
+2026-05-28 19:44:29 |  OK   | Row 101: Created 'Bertrandt Sticker'
+2026-05-28 19:45:00 | ERROR | Row 102: Error creating 'Schlosserei Rabald stick': Locator.select_option: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#DTE_Field_assembly")
+    - locator resolved to <select id="DTE_Field_assembly">…</select>
+  - attempting select option action
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+    - waiting 20ms
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+      - waiting 100ms
+    59 × waiting for element to be visible and enabled
+       - did not find some options
+     - retrying select option action
+       - waiting 500ms
+
+2026-05-28 19:45:04 |  OK   | Row 103: Created 'BWB Nehlsen Sticker'
+2026-05-28 19:45:07 |  OK   | Row 104: Created 'Electrophorus Sticker'
+2026-05-28 19:45:10 |  OK   | Row 105: Created 'Lilack Sticker'
+2026-05-28 19:45:12 |  OK   | Row 106: Created 'Burg Mechanics Sticker'
+2026-05-28 19:45:15 |  OK   | Row 107: Created 'ZVZ Sticker'
+2026-05-28 19:45:18 |  OK   | Row 108: Created 'Keep Off Sticker'
+2026-05-28 19:45:21 |  OK   | Row 109: Created 'Schaeffler Sticker'
+2026-05-28 19:45:24 |  OK   | Row 110: Created 'Eßbach Sticker'
+2026-05-28 19:45:26 |  OK   | Row 111: Created 'BECHEM Sticker'
+2026-05-28 19:45:29 |  OK   | Row 112: Created 'Autodesk Sticker'
+2026-05-28 19:45:32 |  OK   | Row 113: Created 'Lee Company Sticker'
+2026-05-28 19:45:35 |  OK   | Row 114: Created 'About:Energy Sticker'
+2026-05-28 19:45:38 |  OK   | Row 115: Created 'Altium Sticker'
+2026-05-28 19:45:39 | SKIP  | Row 116: Found duplicate match: Excel='Altium Sticker' vs Site='Altium Sticker'
+2026-05-28 19:45:39 | SKIP  | Row 116: Skipped duplicate 'Altium Sticker'
+2026-05-28 19:45:41 |  OK   | Row 117: Created 'UNI Trend Sticker'
+2026-05-28 19:45:44 |  OK   | Row 118: Created 'Unicore Sticker'
+2026-05-28 19:45:47 |  OK   | Row 119: Created 'hxql Sticker'
+2026-05-28 19:45:49 |  OK   | Row 120: Created '1st Mould Sticker'
+2026-05-28 19:45:52 |  OK   | Row 121: Created 'Saint Gobain Sticker'
+2026-05-28 19:45:53 | SKIP  | Row 122: Found duplicate match: Excel='ZVZ Sticker' vs Site='ZVZ Sticker'
+2026-05-28 19:45:53 | SKIP  | Row 122: Skipped duplicate 'ZVZ Sticker'
+2026-05-28 19:45:55 |  OK   | Row 123: Created 'DWH'
+2026-05-28 19:45:58 |  OK   | Row 124: Created 'Dreebit Sticker'
+2026-05-28 19:46:01 |  OK   | Row 125: Created 'Schulz Elektronic Sticker'
+2026-05-28 19:46:04 |  OK   | Row 126: Created 'Moenie Tec Sticker'
+2026-05-28 19:46:25 | ERROR | Row 127: Error creating 'Kühlerbau Kießling Stick': Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator(".DTE_Action_Create") to be hidden
+    3 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
+    40 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
+
+2026-05-28 19:46:29 |  OK   | Row 128: Created 'LANG Technik Sticker'
+2026-05-28 19:46:32 |  OK   | Row 129: Created 'PLS Sticker'
+2026-05-28 19:46:34 |  OK   | Row 130: Created 'Askubal Sticker'
+2026-05-28 19:46:37 |  OK   | Row 131: Created 'Mainplate'
+2026-05-28 19:46:40 |  OK   | Row 132: Created 'Beam Profile MP'
+2026-05-28 19:46:43 |  OK   | Row 133: Created 'Mainplate Console 1 L'
+2026-05-28 19:46:45 |  OK   | Row 134: Created 'Mainplate Console 1 R'
+2026-05-28 19:46:48 |  OK   | Row 135: Created 'Mainplate Console 2 L'
+2026-05-28 19:46:51 |  OK   | Row 136: Created 'Mainplate Console 2 R'
+2026-05-28 19:46:54 |  OK   | Row 137: Created 'Frame Console L'
+2026-05-28 19:47:25 | ERROR | Row 138: Error creating 'Frame Console R': Locator.select_option: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#DTE_Field_assembly")
+    - locator resolved to <select id="DTE_Field_assembly">…</select>
+  - attempting select option action
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+    - waiting 20ms
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+      - waiting 100ms
+    59 × waiting for element to be visible and enabled
+       - did not find some options
+     - retrying select option action
+       - waiting 500ms
+
+2026-05-28 19:47:28 |  OK   | Row 139: Created 'Carbon Rod L'
+2026-05-28 19:47:31 |  OK   | Row 140: Created 'Carbon Rod R'
+2026-05-28 19:47:34 |  OK   | Row 141: Created 'Threaded Insert L'
+2026-05-28 19:47:37 |  OK   | Row 142: Created 'Threaded Insert R'
+2026-05-28 19:47:39 |  OK   | Row 143: Created 'MP Flap'
+2026-05-28 19:47:42 |  OK   | Row 144: Created 'Beam Profile MP Flap 150'
+2026-05-28 19:47:44 | SKIP  | Row 145: Found duplicate match: Excel='MP Flap' vs Site='MP Flap'
+2026-05-28 19:47:44 | SKIP  | Row 145: Skipped duplicate 'MP Flap'
+2026-05-28 19:47:47 |  OK   | Row 146: Created 'Beam Profile MP Flap 100'
+2026-05-28 19:47:49 |  OK   | Row 147: Created 'Gurney'
+2026-05-28 19:47:52 |  OK   | Row 148: Created 'Topwing'
+2026-05-28 19:47:55 |  OK   | Row 149: Created 'Endplates'
+2026-05-28 19:47:57 |  OK   | Row 150: Created 'HVD Arrows Sticker'
+2026-05-28 19:48:00 |  OK   | Row 151: Created 'Outer Flap L'
+2026-05-28 19:48:03 |  OK   | Row 152: Created 'Outer Flap R'
+2026-05-28 19:48:34 | ERROR | Row 153: Error creating 'Outer Endplate L': Locator.select_option: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#DTE_Field_assembly")
+    - locator resolved to <select id="DTE_Field_assembly">…</select>
+  - attempting select option action
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+    - waiting 20ms
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+      - waiting 100ms
+    59 × waiting for element to be visible and enabled
+       - did not find some options
+     - retrying select option action
+       - waiting 500ms
+
+2026-05-28 19:49:06 | ERROR | Row 154: Error creating 'Outer Endplate R': Locator.select_option: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#DTE_Field_assembly")
+    - locator resolved to <select id="DTE_Field_assembly">…</select>
+  - attempting select option action
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+    - waiting 20ms
+    2 × waiting for element to be visible and enabled
+      - did not find some options
+    - retrying select option action
+      - waiting 100ms
+    59 × waiting for element to be visible and enabled
+       - did not find some options
+     - retrying select option action
+       - waiting 500ms
+
+2026-05-28 19:49:10 |  OK   | Row 155: Created 'RW Connection Frame L'
+2026-05-28 19:49:12 |  OK   | Row 156: Created 'RW Connection Frame R'
+2026-05-28 19:49:15 |  OK   | Row 157: Created 'RW Con. X'
+2026-05-28 19:49:18 |  OK   | Row 158: Created 'Kinematic Cover Bargeboar'
+2026-05-28 19:49:21 |  OK   | Row 159: Created 'TUD Sticker'
+2026-05-28 19:49:24 |  OK   | Row 160: Created 'BMW Sticker'
+2026-05-28 19:49:27 |  OK   | Row 161: Created 'IAMT Sticker'
+2026-05-28 19:49:29 |  OK   | Row 162: Created 'Tracetronic Sticker'
+2026-05-28 19:49:32 |  OK   | Row 163: Created 'Rhode & Schwarz Sticker'
+2026-05-28 19:49:36 |  OK   | Row 164: Created 'UWEs Fahrschule Sticker'
+2026-05-28 19:49:39 |  OK   | Row 165: Created 'Schulze Werkzeugbau Stick'
+2026-05-28 19:49:42 |  OK   | Row 166: Created 'namE Sticker'
+2026-05-28 19:49:45 |  OK   | Row 167: Created 'E59 Sticker'
+2026-05-28 19:49:47 |  OK   | Row 168: Created 'Kinematic Cov Bargeboard'
+2026-05-28 19:49:50 |  OK   | Row 169: Created 'Kinematics Cover Foil L'
+2026-05-28 19:49:53 |  OK   | Row 170: Created 'Kinematics Cover Foil R'
+2026-05-28 19:49:54 | INFO  | Automation finished.
+
+---
+
+2026-05-28 20:08:43 | INFO  | ============================================================
+2026-05-28 20:08:43 | INFO  | FSG CCBOM Automation — Starting
+Row 6: Action=Edit (Part Name), Final='Lidar Slider 3D Teile'
+Row 6: Action=Edit (Comment), Final='connection Lidar with main hoop & Mono'
+Row 40: Action=Edit (Part Name), Final='Flat Flex Cable M 5cm'
+Row 41: Action=Edit (Part Name), Final='Board dartM GigE RJ45 AUX'
+Row 42: Action=Edit (Part Name), Final='dart M I/O Cable,IDC/open'
+Row 47: Action=Edit (Part Name), Final='Supply + Ground cable'
+Row 50: Action=Edit (Part Name), Final='Lemo Data-Sensor Connecto'
+Row 61: Action=Edit (Part Name), Final='Ethernt Cable'
+Row 63: Action=Edit (Part Name), Final='Supply Cable'
+Row 68: Action=Edit (Part Name), Final='Steering Actuator  Board'
+Row 72: Action=Edit (Part Name), Final='CAN Cable InlinePlug Male'
+Row 73: Action=Edit (Part Name), Final='CAN Cabl InlinePlug Fmale'
+Row 75: Action=Edit (Part Name), Final='Cable InlinePlug Male'
+Row 76: Action=Edit (Part Name), Final='Cable Inline Plug Female'
+2026-05-28 20:11:35 | INFO  | Excel Scan Summary for 'BOM_AS_EFR18 (1).xlsx':
+2026-05-28 20:11:35 | INFO  |   • Total rows found:     78
+2026-05-28 20:11:35 | INFO  |   • Empty/Invalid rows:   3
+2026-05-28 20:11:35 | INFO  |   • Example rows skipped: 8
+2026-05-28 20:11:35 | INFO  |   • System mismatch:      0 (filtered by AT)
+2026-05-28 20:11:35 | INFO  |   • Already done (color): 30
+2026-05-28 20:11:35 | INFO  |   • Valid parts found:    37
+2026-05-28 20:12:43 | INFO  | Assembly Matching Summary:
+2026-05-28 20:12:43 | INFO  |   • Parts matching selected assemblies: 8
+2026-05-28 20:12:43 | INFO  |   • Parts skipped (no assembly match): 29
+2026-05-28 20:12:43 | INFO  | Will attempt to upload all 8 matched parts.
+2026-05-28 20:12:43 | INFO  | Fetching existing parts from FSG for deduplication...
+2026-05-28 20:12:43 | INFO  | Found 977 existing parts on the website.
+2026-05-28 20:12:45 |  OK   | Row 40: Created 'Flat Flex Cable M 5cm'
+2026-05-28 20:13:07 | ERROR | Row 41: Error creating 'Board dartM GigE RJ45 AUX': Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator(".DTE_Action_Create") to be hidden
+    2 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
+    41 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
+
+2026-05-28 20:13:11 |  OK   | Row 42: Created 'dart M I/O Cable,IDC/open'
+2026-05-28 20:13:33 | ERROR | Row 43: Error creating 'Heat sink for dart': Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator(".DTE_Action_Create") to be hidden
+    3 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
+    40 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
+
+2026-05-28 20:13:37 |  OK   | Row 44: Created 'Cooling Fan'
+2026-05-28 20:13:58 | ERROR | Row 45: Error creating 'Housing': Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator(".DTE_Action_Create") to be hidden
+    2 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
+    41 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
+
+2026-05-28 20:14:02 |  OK   | Row 46: Created 'Ethernet Cable (1.5m)'
+2026-05-28 20:14:23 | ERROR | Row 47: Error creating 'Supply + Ground cable': Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator(".DTE_Action_Create") to be hidden
+    3 × locator resolved to visible <div class="DTE DTE_Action_Create processing">…</div>
+    40 × locator resolved to visible <div class="DTE DTE_Action_Create">…</div>
+
+2026-05-28 20:14:24 | INFO  | Automation finished.
+
+---
+
