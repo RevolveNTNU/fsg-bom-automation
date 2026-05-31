@@ -181,10 +181,10 @@ class FSGBrowser:
         try:
             target_asm = item['assembly']
             self.page.wait_for_function(
-                f"""(asm) => {{
+                """(asm) => {
                     const el = document.querySelector("#DTE_Field_assembly");
                     return el && Array.from(el.options).some(o => o.text === asm);
-                }}""",
+                }""",
                 target_asm,
                 timeout=5000
             )

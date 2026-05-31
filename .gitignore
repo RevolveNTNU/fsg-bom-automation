@@ -28,6 +28,7 @@ page_source_debug.html
 
 # Test / coverage
 .pytest_cache/
+.mypy_cache/
 .coverage
 coverage/
 htmlcov/
@@ -47,3 +48,6 @@ pip-wheel-metadata/
 /BOMs/*
 !/BOMs/BOM_Example_EFRxx.xlsx
 !/BOMs/config.yaml
+
+# Misc
+/.old/*

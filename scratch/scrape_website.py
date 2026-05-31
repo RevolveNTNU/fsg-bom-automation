@@ -4,7 +4,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.config import Config
 from src.browser import FSGBrowser
-import time
 
 def main():
     config = Config()

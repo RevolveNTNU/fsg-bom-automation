@@ -2,7 +2,7 @@ import glob
 import os
 import shutil
 import tempfile
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, List, Optional, Tuple
 
 import openpyxl
 import pandas as pd
@@ -158,7 +158,7 @@ class ExcelProcessor:
                 if os.path.exists(temp_path):
                     try:
                         os.remove(temp_path)
-                    except:
+                    except OSError:
                         pass
 
         sheet = wb.active

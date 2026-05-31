@@ -1,3 +1,23 @@
+# Release v1.1.0 — Excel & Automation Enhancements
+
+Date: 2026-05-31
+
+This release improves Excel processing, enhances browser automation, and adds new configuration options for better automation control.
+
+Highlights
+- Improved Excel processing and configuration handling.
+- Enhanced BOM automation with new file handling and auto-confirm capabilities.
+- Browser automation fixes and improved example detection.
+- Refactored imports and improved system selection logic.
+- Code cleanup and linting improvements.
+
+Notable files
+- [src/__init__.py](src/__init__.py) — version bumped to `1.1.0`.
+- [src/excel.py](src/excel.py) — processing improvements.
+- [src/browser.py](src/browser.py) — detection and automation fixes.
+
+---
+
 # Release v1.0.0 — Refactor & Tests
 
 Date: 2026-04-18
@@ -22,7 +42,7 @@ Highlights
 - Documentation and README improvements to guide setup and usage.
 
 Notable files (summary)
-- [src/__init__.py](src/__init__.py#L1-L3) — package version bumped to `1.1.0`.
+- [src/__init__.py](src/__init__.py#L1-L3) — package version bumped to `1.0.0`.
 - [main.py](main.py) — new lightweight entrypoint.
 - [src/config.py](src/config.py) — centralized configuration and CLI parsing.
 - [src/browser.py](src/browser.py) — Playwright-based browser helpers.
