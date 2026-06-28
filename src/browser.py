@@ -1,5 +1,7 @@
 import time
 from typing import List, Dict, Optional
+
+from httpx import options
 from playwright.sync_api import sync_playwright
 
 class FSGBrowser:
@@ -125,6 +127,7 @@ class FSGBrowser:
                             site_id: currentIdVal,
                             system: lastSystem,
                             assembly: lastAssembly,
+                            subassembly: subasm_val,
                             part: currentPart
                         });
                     }
@@ -193,6 +196,21 @@ class FSGBrowser:
             pass
             
         self.page.locator("#DTE_Field_assembly").select_option(label=item['assembly'])
+        
+        if item.get("subassembly") and item["subassembly"].strip() != "nan":
+            subassembly = item["subassembly"].strip()
+            select = self.page.locator("#DTE_Field_sub_assembly")
+
+            options = select.locator("option").all_inner_texts()
+            options = [option.strip() for option in options]
+
+            if subassembly in options:
+                select.select_option(label=subassembly)
+            else:
+                select.select_option(label="- new -")
+                time.sleep(2)
+                self.page.locator("#DTE_Field_sub_assembly_name").fill(subassembly)
+
         self.page.locator("#DTE_Field_part").fill(item['part'])
         
         if item['makebuy'] == 'm':

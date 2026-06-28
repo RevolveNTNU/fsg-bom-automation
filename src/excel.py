@@ -175,6 +175,7 @@ class ExcelProcessor:
         col_map = {
             "system": find_col(["system", "sys"]),
             "assembly": find_col(["assembly", "asm", "assy"]),
+            "subassembly": find_col(["subassembly", "sub-assembly", "sub asm"]),
             "part": find_col(["part", "part name", "designation"]),
             "quantity": find_col(["part_quantity", "quantity", "qty", "amount"]),
             "makebuy": find_col(["make o. buy", "m/b", "makebuy"]),
@@ -229,6 +230,7 @@ class ExcelProcessor:
                 continue
 
             asm_val = str(row.iloc[col_map["assembly"]] if col_map["assembly"] is not None else "").strip()
+            subasm_val = str(row.iloc[col_map["subassembly"]] if col_map["subassembly"] is not None else "").strip()
             qty_val = str(row.iloc[col_map["quantity"]] if col_map["quantity"] is not None else "").strip()
             mb_val = str(row.iloc[col_map["makebuy"]] if col_map["makebuy"] is not None else "m").strip().lower()[:1] or "m"
             comm_val = str(row.iloc[col_map["comments"]] if col_map["comments"] is not None else "").strip().replace("nan", "")
@@ -251,6 +253,7 @@ class ExcelProcessor:
                 "row": excel_row,
                 "system": sys_val,
                 "assembly": asm_val,
+                "subassembly": subasm_val,
                 "part": part_val,
                 "makebuy": mb_val,
                 "quantity": qty_val,
