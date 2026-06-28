@@ -168,13 +168,13 @@ class BOMAutomation:
                             ex_asm = self.matcher._normalize(existing_data.get('assembly', ''))
                             
                             # Match if part name matches exactly
-                            if ex_part == part_norm:
-                                # If assembly is also known, check it too
-                                if asm_norm and ex_asm and asm_norm != ex_asm:
-                                    continue
-                                found_duplicate = True
-                                self.ui.log(f"Row {part['row']}: Found duplicate match: Excel='{part['part']}' vs Site='{existing_data.get('part')}'", "SKIP")
-                                break
+                            # if ex_part == part_norm:
+                            #     # If assembly is also known, check it too
+                            #     if asm_norm and ex_asm and asm_norm != ex_asm:
+                            #         continue
+                            #     found_duplicate = True
+                            #     self.ui.log(f"Row {part['row']}: Found duplicate match: Excel='{part['part']}' vs Site='{existing_data.get('part')}'", "SKIP")
+                            #     break
                         
                         if found_duplicate:
                             status_table.add_row(str(part['row']), part['part'], "[blue]SKIP[/]", "Duplicate (already on site)")
