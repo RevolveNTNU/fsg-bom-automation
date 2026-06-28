@@ -122,6 +122,9 @@ class BOMAutomation:
                 matched_parts = []
                 skipped_matching = 0
                 for p in parts:
+                    if p['part'] == "nan":
+                        skipped_matching += 1
+                        continue
                     resolved = self.matcher.resolve_label(p['assembly'], site_options, runtime_allowed or self.config.allowed_assemblies)
                     if resolved:
                         p['assembly'] = resolved
